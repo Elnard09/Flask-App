@@ -36,6 +36,7 @@ app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
     'poolclass': 'NullPool'  # Optional: you might consider using a connection pool if necessary
 }
 app.instance_path = None 
+app.instance_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'instance')
 db = SQLAlchemy(app)
 
 # Your API Keys (make sure to keep them secure!)
