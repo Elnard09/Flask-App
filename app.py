@@ -7,7 +7,7 @@ import openai
 import uuid
 import asyncio
 import pytesseract
-import pyttsx3
+# import pyttsx3
 import requests
 from flask_sqlalchemy import SQLAlchemy
 from dotenv import load_dotenv
@@ -21,10 +21,10 @@ from werkzeug.utils import secure_filename
 
 load_dotenv()
 
-engine = pyttsx3.init()
-engine.setProperty('rate', 150)
-engine.setProperty('volume', 1)
-AUDIO_FILE_PATH = 'static/audio_output.mp3'
+# engine = pyttsx3.init()
+# engine.setProperty('rate', 150)
+# engine.setProperty('volume', 1)
+# AUDIO_FILE_PATH = 'static/audio_output.mp3'
 
 
 
@@ -271,9 +271,9 @@ def get_dynamic_title_and_description(question, ai_response):
 def get_user_by_id(user_id):
     return User.query.get(user_id)
 
-def text_to_speech(text):
-    engine.save_to_file(text, AUDIO_FILE_PATH)
-    engine.runAndWait()
+# def text_to_speech(text):
+#     engine.save_to_file(text, AUDIO_FILE_PATH)
+#     engine.runAndWait()
     
 # @app.route('/text-to-speech', methods=['POST'])
 # @login_required
