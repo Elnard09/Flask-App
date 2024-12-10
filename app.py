@@ -32,7 +32,7 @@ load_dotenv()
 app = Flask(__name__)
 
 # Use the environment variable for the instance path
-app.config['INSTANCE_PATH'] = os.environ.get('FLASK_INSTANCE_PATH', '/tmp/instance')
+app.config['INSTANCE_PATH'] = '/tmp/instance'
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///youtube_videos.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
