@@ -50,7 +50,7 @@ login_manager.login_view = 'login'
 login_manager.login_message_category = 'info'  # Optional: Sets flash message category
 
 # Configuration for file uploads
-UPLOAD_FOLDER = 'uploads'
+UPLOAD_FOLDER = 'upload'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'docx'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
