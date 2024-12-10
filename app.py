@@ -275,20 +275,20 @@ def text_to_speech(text):
     engine.save_to_file(text, AUDIO_FILE_PATH)
     engine.runAndWait()
     
-@app.route('/text-to-speech', methods=['POST'])
-@login_required
-def text_to_speech_route():
-    data = request.get_json()
-    text = data.get('text')
+# @app.route('/text-to-speech', methods=['POST'])
+# @login_required
+# def text_to_speech_route():
+#     data = request.get_json()
+#     text = data.get('text')
     
-    if not text:
-        return jsonify({'error': 'Text is required.'}), 400
+#     if not text:
+#         return jsonify({'error': 'Text is required.'}), 400
     
-    # Convert the text to speech and save the audio file
-    text_to_speech(text)
+#     # Convert the text to speech and save the audio file
+#     text_to_speech(text)
     
-    # Return the path of the saved audio file
-    return jsonify({'audio_file': AUDIO_FILE_PATH})
+#     # Return the path of the saved audio file
+#     return jsonify({'audio_file': AUDIO_FILE_PATH})
 
 @app.route('/process_youtube_link', methods=['POST'])
 @login_required
