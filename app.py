@@ -31,16 +31,11 @@ load_dotenv()
 # Initialize Flask and the database
 app = Flask(__name__)
 
-# Use the environment variable for the instance path
-app.config['INSTANCE_PATH'] = os.getenv('FLASK_INSTANCE_PATH', '/tmp/instance')  # Default to /tmp/instance if not set
 
 # Initialize Flask and the database
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///youtube_videos.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
-    'poolclass': 'NullPool'  # Optional: you might consider using a connection pool if necessary
-}
 
 db = SQLAlchemy(app)
 
