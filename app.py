@@ -803,5 +803,14 @@ def analyze_image():
         logging.error(f"Error analyzing image: {e}")
         return jsonify({'error': 'Failed to analyze the image.'}), 500
     
+@app.errorhandler(404)
+def page_not_found(e):
+    return jsonify({'error': 'Resource not found'}), 404
+
+@app.errorhandler(500)
+def server_error(e):
+    return jsonify({'error': 'Internal server error'}), 500
+
+    
 if __name__ == '__main__':
     app.run(debug=True)
