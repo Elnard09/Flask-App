@@ -26,12 +26,6 @@ load_dotenv()
 # engine.setProperty('volume', 1)
 # AUDIO_FILE_PATH = 'static/audio_output.mp3'
 
-
-
-# Initialize Flask and the database
-app = Flask(__name__)
-
-
 # Initialize Flask and the database
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///youtube_videos.db'
