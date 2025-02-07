@@ -95,6 +95,9 @@ class ChatMessage(db.Model):
     message = db.Column(db.Text, nullable=False)
     is_user = db.Column(db.Boolean, nullable=False)
     timestamp = db.Column(db.DateTime, default=datetime.utcnow)
+    
+with app.app_context():
+    db.drop_all()
 
 # Create the database if it doesn't exist
 with app.app_context():
