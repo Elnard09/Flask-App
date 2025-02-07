@@ -76,12 +76,12 @@ class ImageAnalysis(db.Model):
     analysis = db.Column(db.Text, nullable=False)
 
 class ChatSession(db.Model):
-    """ Model representing a chat session (no user login references). """
     id = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.DateTime, nullable=False)
     title = db.Column(db.String(255), nullable=False)
     description = db.Column(db.Text, nullable=False)
     video_id = db.Column(db.String(100), nullable=True)
+
 
     # Relationship to other summaries
     file_summary = db.relationship('FileSummary', backref='session', lazy=True)
